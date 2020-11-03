@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head th:insert="fragments/common :: head(about)"></head>
+
+<body>
+  <header th:replace="fragments/common :: header"></header>
+  <div th:replace="fragments/common :: navbar"></div>
+	  <!-- About Content Start -->
+        <section>
+          <div class="container-fluid h-100">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-4">
+                <h1 class="text-center mt-5 history-heading pb-5">
+                  History of Shibukawa
+                </h1>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="d-none d-lg-block col-lg-3">
+                <img class="img-fluid" src="./images/japanese_tree.jpg" alt="">
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                <p class="restaurant-history mx-auto w-100 text-justify p-3">
+                  Our restaurant, founded in 2020, named after the enchanting and idyllic city in which it
+                  resides.  Shibukawa Restaurant, whose name in Japanese contains the word "kawa" meaning river,
+                  overlooks the majestic and heavenly Tonegawa river, and provides diners with a breathtaking
+                  panoramic view of the river as they dine.  Our dishes are inspired by and infused with local fruits and
+                  vegetables like daikon and persimmon, that are freshly picked and delivered daily by Shibukawa's own farmers.  Along with our exquisite cuisine
+                  our restaurant provides an ambience that mirrors the simple and subtle beauty of the surrounding mountains, forests, rice fields, and rivers. Tourists
+                  can spend their day hiking in the picturesque mountains, or indulging in the nearby soothing and relaxing hot springs, before concluding
+                  their evening with an otherwordly dining experience they will never forget.
+                </p>
+              </div>
+              <div class="d-none d-lg-block col-lg-3">
+                <img class="img-fluid" src="./images/onsen2.jpg" alt="">
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-7 col-lg-4">
+                <div id="restaurantCarousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/carousel1.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="./images/carousel2.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="./images/carousel3.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="./images/carousel4.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="./images/carousel5.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="./images/carousel6.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About Content End -->
+ 
+  <footer th:replace="fragments/common :: footer"></footer>
+  
+   <script th:replace="fragments/common :: jquery"></script>
+    <script th:replace="fragments/common :: bundle"></script>
+</body>
+
+</html>

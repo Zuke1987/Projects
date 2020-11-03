@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head th:insert="fragments/common :: head(shoppingcart)"></head>
+
+<body>
+  <header th:replace="fragments/common :: header"></header>
+  <div th:replace="fragments/common :: navbar"></div>
+    <!-- Shopping Cart Start -->
+        <section class="mt-5">
+          <div class="container-fluid h-100">
+            <div class="row justify-content-center mt-5 mb-5 ">
+            	  <div class="col-md-10">
+	              	<form th:action="@{/logout}" method="post" class="welcome-user">
+			            Welcome [[${session.nameOfUserLoggedIn}]] ! <input type="submit" value="Logout"/>
+			        </form>
+	              </div>
+            </div>
+            <div class="row justify-content-center">
+              
+              <div class="col-12 col-sm-7 col-md-7 col-lg-6">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead class="table-entrees">
+                      <tr>
+                        <th scope="col">Entrees</th>
+                        <th scope="col">Prices</th>
+                        <th scope="col" class="text-center">Add/Remove Item</th>
+                      </tr>
+                    </thead>
+                    <tbody id="menu_entrees">
+                    	<tr th:each="item : ${menuEntrees}">
+                      	<td th:text="${item.itemName}"></td>
+                      	<td th:text="${item.itemPrice}"></td>
+                      	<td>
+                      		<button class="btn btn-action" th:onclick="'order.addOrder('+${item.menuItemId}+')'">ADD</button>
+      						<button class="btn btn-action-remove" th:onclick="'order.removeOrder('+${item.menuItemId}+')'">REMOVE</button>
+                      	</td>
+                      </tr>
+                    </tbody>
+                    <thead class="table-beverages">
+                      <tr>
+                        <th scope="col">Beverages</th>
+                        <th scope="col">Prices</th>
+                        <th scope="col" class="text-center">Add/Remove Item</th>
+                      </tr>
+                    </thead>
+                    <tbody id="menu_beverages">
+                    	<tr th:each="item : ${menuBeverages}">
+                      	<td th:text="${item.itemName}"></td>
+                      	<td th:text="${item.itemPrice}"></td>
+                      	<td>
+                      		<button class="btn btn-action" th:onclick="'order.addOrder('+${item.menuItemId}+')'">ADD</button>
+      						<button class="btn btn-action-remove" th:onclick="'order.removeOrder('+${item.menuItemId}+')'">REMOVE</button>
+                      	</td>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-12 col-sm-5 col-md-5 col-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-order-total">
+                    <thead class="table-entrees">
+                      <tr>
+                        <th scope="col" class="text-left">ORDER TOTAL</th>
+                        <th scope="col">QUANTITY</th>
+                        <th scope="col">PRICE</th>
+                      </tr>
+                    </thead>
+                    <tbody id="menu_total"></tbody>
+                  </table>
+                  <div id="order-result"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Shopping Cart End-->
+
+ 
+  <footer th:replace="fragments/common :: footer"></footer>
+  
+   <script th:replace="fragments/common :: jquery"></script>
+    <script th:replace="fragments/common :: bundle"></script>
+    <script type="text/javascript" src="scripts/shopping_cart.js"></script>
+    <script th:inline="javascript">
+          order.initMenuItems();
+          
+          menuEntrees = /*[[${menuEntrees}]]*/ '';
+          menuBeverages = /*[[${menuBeverages}]]*/ '';
+          
+          menu_options = menuEntrees.concat(menuBeverages);
+          
+          $.each(menu_options, function(index, item){
+        	  item.position = 0;
+        	  item.quantity = 0;
+          });
+          
+    </script>
+</body>
+
+</html>
+

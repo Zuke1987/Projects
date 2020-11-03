@@ -1,0 +1,61 @@
+.menu-bar {
+  color: white;
+  font-family: 'Shojumaru', cursive;
+  font-size: 5rem;
+  background-color: #C5B358;
+  margin-top: 5%;
+}
+
+.row-menu-column .col-md-4{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.row-menu-column .col-md-4 .card{
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+.row-menu-column .col-md-4 .card h5.card-title {
+    font-size: 1.8rem;
+}
+
+.menu-items{
+  background-image: url(../images/sorasak-_UIN-pFfJ7c-unsplash.jpg);
+  background-size: cover;
+}
+.menu-beverage{
+  background-image: url(../images/sora-sagano-8sOZJ8JF0S8-unsplash.jpg);
+  background-size: cover;
+}
+
+.menu-bar:last-child{
+  margin-top: 0px;
+}
+footer{
+  margin-top: 0px;
+}
+
+.card{
+  box-shadow: 0 8px 16px 0 rgba(256, 256, 256, 0.2);
+  border-radius: 5px;
+}
+.card:hover{
+    box-shadow: 0 15px 36px 0 rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* .card-body {
+  height: 120px;
+} */
+
+img {
+  height: 250px;
+}
+
+@media (max-width: 575px){
+  .menu-bar{
+    font-size: 3.5rem;
+  }
+}
+

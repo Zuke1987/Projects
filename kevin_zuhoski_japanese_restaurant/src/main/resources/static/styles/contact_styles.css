@@ -1,0 +1,63 @@
+/* Pushes the form down from the navbar */
+.navbar {
+  margin-bottom: 100px;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: #f1f1f1;
+    font-size: 1.75rem;
+    border: 10px solid #C5B358;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url(../images/fuji.jpeg);
+    background-size: cover;
+    color: white;
+
+}
+
+.form-submit {
+  background-color: red;
+  height: 50px;
+  font-size: 1.5rem;
+  /* color: white; */
+}
+
+form input {
+  font-family: arial;
+  font-size: 1.5rem !important;
+}
+
+form select {
+  font-family: arial;
+  font-size: 1.5rem !important;
+}
+
+form textarea {
+  font-family: arial;
+  font-size: 1.5rem !important;
+}
+/* submit button changes color when hovered over */
+.form-submit:hover {
+    background-color: #C5B358;
+    /* color:white; */
+}
+
+/* Changes the default height of Bootstrap form inputs */
+.tall-input {
+  height: 40px;
+}
+
+/* Changes the width of the form to width: 75% until the screen
+size reaches 1200px */
+@media (max-width: 1200px) {
+  .form-container {
+      width: 75% !important;
+  }
+}
+
+/* section {
+   background-image: url(../images/Sogo_Koen.jpg);
+  background-size: cover;
+} */

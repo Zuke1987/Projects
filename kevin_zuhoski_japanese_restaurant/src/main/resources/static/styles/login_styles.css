@@ -1,0 +1,45 @@
+section{
+  margin-top: 140px;
+}
+
+form{
+  background-color: white;
+  text-align: left;
+  padding: 50px 0;
+}
+form input{
+  font-family: Arial !important;
+  font-size: 1.4rem !important;
+  padding: 20px 10px !important;
+}
+.form-submit{
+  font-size: 1.9rem !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  background-color: black;
+  color: white;
+}
+
+.formpage{
+  font-size: 1.7rem;
+  text-align: center;
+}
+.formelement{
+  background-color: #C5B358;
+}
+
+.formelement a{
+  color: black;
+}
+.formelement a:hover{
+  color: red;
+  text-decoration: none;
+}
+
+.formelement:first-child{
+  border-radius: 15px 15px 0 0;
+}
+
+.formelement:last-child{
+  border-radius: 0 0 15px 15px;
+}

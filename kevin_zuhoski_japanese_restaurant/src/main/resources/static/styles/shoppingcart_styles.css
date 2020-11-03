@@ -1,0 +1,57 @@
+.table{
+  background-color: #CCC !important;
+  font-size: 1.5rem;
+}
+.table td, .table th{
+  padding: 15px;
+}
+.table-entrees, .table-entrees>td, .table-entrees>th{
+  background-color: red !important;
+}
+.table-beverages, .table-beverages>td, .table-beverages>th{
+  background-color: #C5B358 !important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.15);
+}
+
+.table-order-total th{
+  background-color: #000;
+  color:#FFF;
+}
+#menu_total{
+  background-color: #C5B358;
+}
+
+.btn-action, .btn-action-remove{
+  background-color: #555;
+  color: #FFF;
+  border:2px solid #FFF;
+}
+.btn-action:hover{
+  background-color: #C5B358;
+  color: #FFF;
+}
+.btn-action-remove:hover{
+  background-color: red;
+  color: #FFF;
+}
+.btn-po{
+  font-size: 1.8rem;
+}
+
+#menu_entrees button, #menu_beverages button{
+  padding: 8px 15px !important;
+  border-radius: 8px;
+}
+.welcome-user{
+	font-size: 1.8rem;
+	color:#C5B358;
+}
+.welcome-user input{
+	border-radius: 25px;
+	border: 4px solid #555;
+}
+.welcome-user input:hover{
+	background: red;
+}

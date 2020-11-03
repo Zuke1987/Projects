@@ -1,0 +1,112 @@
+.rhombus-shape .name{
+  color: white;
+}
+
+
+.images img{
+  height: 300px;
+  width: 90%;
+}
+
+.images .row .row:first-child{
+  padding-bottom: 220px;
+}
+
+.name,
+.images img,
+.rhombus-shape .name{
+  animation-name: enterTitle;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@media (min-width: 992px){
+  .rhombus-shape .name div:first-child h1{
+    font-size: 7.5rem !important;
+  }
+
+  .rhombus-shape .name div:last-child{
+    font-size: 4.5rem !important;
+  }
+  .rhombus-shape .name div:last-child h2{
+    font-size: 4.5rem !important;
+  }
+}
+@media (max-width: 991px){
+  .rhombus-shape .name div:first-child h1{
+    font-size: 4rem !important;
+  }
+  .rhombus-shape .name div:last-child{
+    font-size: 3rem !important;
+  }
+  .rhombus-shape .name div:last-child h2{
+    font-size: 3.5rem !important;
+  }
+}
+
+#restaurant-name {
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 3%;
+  animation-name: enterTitle;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes enterTitle {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1.0;
+  }
+}
+
+.main-name {
+  font-family: 'Shojumaru', cursive;
+}
+
+span.main-name {
+  font-size: 3rem;
+}
+
+
+
+/*Gold Rhombus, Flag, Photo combination*/
+.rhombus {
+  background-color: black; /* Was #black but causing error */
+  padding-top: 45%;
+  padding-bottom: 45%;
+  margin: 5% auto;
+  width: 100%;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  position: relative;
+  background-image:
+    url(../images/audrey-mari-HvhinFxq4_s-unsplash.jpg);
+  background-size: cover;
+  background-position:top;
+}
+
+#flag {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 25%;
+  box-shadow: 0px 0px 20px white;
+  opacity: 0.8;
+}
+
+/* Restaurant Description */
+#description {
+  color: white;
+  text-align: center;
+}

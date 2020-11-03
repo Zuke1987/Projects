@@ -1,0 +1,103 @@
+/* Set the default font-size to 10 px so 1 rem = 10 px */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+    font-family: 'Shojumaru', cursive;
+    background-color: black;
+}
+
+.background-red{
+  background-color: red;
+}
+
+header {
+  padding:45px;
+} 
+
+footer{
+  margin-top: 100px;
+  padding: 30px;
+}
+
+/* Changes the size of the restaurant name text in header */
+.header-left-text {
+  font-size: 2.5rem;
+}
+
+/* Changes the size of the address text in header */
+.header-right-text {
+  font-size: 1.5rem;
+}
+
+/* Removes the default padding of the navbar */
+.navbar{
+  padding: 0;
+  margin-left: -15px;
+}
+
+/* Changes the size of the navbar's text */
+.navbar-menu-text {
+  font-size: 2rem;
+}
+
+/* Eliminates the default padding of Bootstrap to create
+custom padding so that the on hover the entire word and
+padding of each navbar text element is covered */
+.navbar-menu-text a.nav-link {
+    padding: 10px 16px !important;
+}
+
+/* Changes the color of the navbar items on hover */
+.navbar-menu-text a.nav-link:hover {
+  background-color: #C5B358;
+}
+
+.proverb {
+  font-size: 2rem;
+  font-family: 'Shojumaru', cursive;
+}
+
+.error-controls{
+	color: red;
+    text-align: left !important;
+    font-size: 1.5rem;
+    font-family: Arial;
+    display: block;
+}
+.alert-color {
+	background-color: #C5B358;
+}
+
+.success-controls{
+	color: green;
+    text-align: left !important;
+    font-size: 1.5rem;
+    font-family: Arial;
+    display: block;
+}
+
+.message-success{
+	color: #C5B358;
+	text-align: center;
+	font-size: 1.8rem;
+}
+.message-error{
+	color: red;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+.btn-myreviews{
+	background: red;
+	font-size: 1.5rem;
+	border-radius: 8px;
+	font-family: 'Shojumaru', cursive;
+    color: black;
+}
+
+textarea{
+	font-size: 1.5rem !important;
+}

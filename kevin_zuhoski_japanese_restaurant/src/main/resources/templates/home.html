@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head th:insert="fragments/common :: head(home)"></head>
+
+<body>
+  <header th:replace="fragments/common :: header"></header>
+  <div th:replace="fragments/common :: navbar"></div>
+	<div class="rhombus-shape pt-5">
+          <div class="container-fluid h-100">
+          <div class="row name">
+            <div class="col-12 text-center">
+              <h1>Shibukawa</h1>
+            </div>
+            <div class="col-12 text-center">
+              <span>Restaurant</span>
+              <h2>渋川</h2>
+            </div>
+          </div>
+          <div class="images">
+            <div class="row">
+
+              <div class="col-sm-3 col-md-3 d-none d-md-block">
+                <div class="row">
+                  <div class="col-12">
+                    <img class="img-fluid" src="images/vinicius-benedit--1GEAA8q3wk-unsplash.jpg" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <img class="img-fluid" src="images/rod-long-kImU-9S9uh8-unsplash.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <section>
+                  <div class="rhombus">
+                    <img id="flag" src="images/japanese_flag.jpg">
+                  </div>
+                </section>
+              </div>
+              <div class="col-sm-3 col-md-3 d-none d-md-block">
+                <div class="row">
+                  <div class="col-12">
+                    <img class="img-fluid" src="images/hari-panicker-2t28IxSTqF4-unsplash.jpg" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <img class="img-fluid" src="images/leon-bublitz-fBeRt6DnhC8-unsplash.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+ 
+  <footer th:replace="fragments/common :: footer"></footer>
+  
+   <script th:replace="fragments/common :: jquery"></script>
+    <script th:replace="fragments/common :: bundle"></script>
+</body>
+
+</html>

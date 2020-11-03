@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head th:insert="fragments/common :: head(reviews)"></head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header th:replace="fragments/common :: header"></header>
+  <div th:replace="fragments/common :: navbar"></div>
+  
+  
+  
+  
+	<!-- CONTENT REVIEWS -->
+	<section class="mt-5">
+		<div class="container-fluid h-100">
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-10 col-md-8">
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#otherreviews" role="tab">Reviews</a>
+					  </li>
+					  <li th:if="${loggedin}" class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#myreviews" role="tab">My Reviews</a>
+					  </li>
+					</ul>
+					
+					<div class="tab-content content-reviews">
+					  	<div class="tab-pane active" id="otherreviews" role="tabpanel"  aria-labelledby="otherreviews-tab">
+		          			<div th:each="review : ${allReviews}" class="row item-review">
+		          				<div class="col-12 user">@[[${review.customer.firstName}]][[${review.customer.lastName}]]</div>
+		          				<div class="col-12 review">
+		          					<div class="row">
+		          						<div class="col-9">[[${review.review}]]</div>
+		          						<div class="col-2 text-right">
+		          							<span class="align-text-bottom">
+		          								<a href="javascript:;">Like</a>&nbsp;
+		          								<a href="javascript:;">Dislike</a>
+		          							</span>
+		          						</div>
+		          					</div>
+		          				</div>
+		          			</div>
+		        		</div>
+		        		<div class="tab-pane" id="myreviews" role="tabpanel" aria-labelledby="myreviews-tab">
+		        			<form th:action="@{/create-review}" th:object="${review}" method="POST">
+		        				<div class="row">
+			        				<div class="col-12">
+			        					<textarea rows="5" class="form-control" th:field="*{review}" 
+			        					placeholder="Please write a comment here."></textarea>
+			        					<input type="hidden" th:field="*{reviewId}">
+			        				</div>
+			        				<div class="col-12 mt-3">
+			        					<input type="submit" class="btn btn-myreviews" th:value="${review.reviewId}==null ? 'Send Review' : 'Update Review'">
+			        					
+			        				</div>
+		        				</div>
+		        			</form>
+		        			<hr/>
+		        			
+		          			<div th:each="review : ${allReviewsByUserLoggedIn}" class="row item-review">
+		          				<div class="col-12 user">@[[${review.customer.firstName}]][[${review.customer.lastName}]]</div>
+		          				<div class="col-12 review">
+		          					<div class="row">
+		          						<div class="col-9">[[${review.review}]]</div>
+		          						<div class="col-2 text-right">
+		          							<span class="align-text-bottom">
+		          								<a th:href="@{/reviews-view(myreviews=${review.reviewId})}">Edit</a>&nbsp;
+		          								<a th:href="@{/delete-review(id=${review.reviewId})}">Delete</a>
+		          							</span>
+		          						</div>
+		          					</div>
+		          				</div>
+		          			</div>
+		          			
+		        		</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- CONTENT REVIEWS -->
+   
+ 
+   <footer th:replace="fragments/common :: footer"></footer>
+  
+   	<script th:replace="fragments/common :: jquery"></script>
+    <script th:replace="fragments/common :: bundle"></script>
+    <script th:inline="javascript">
+	    $(function () {
+	      	      
+	      let allReviews = /*[[${param.all}]]*/'';
+	      
+	      if(allReviews!=null){
+	    	  $('#myTab li:first-child a').tab('show');
+	      }else{
+	    	  $('#myTab li:last-child a').tab('show')
+	      }
+	    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/common :: head(registration)"></head>
+
+<body>
+  <header th:replace="fragments/common :: header"></header>
+  <div th:replace="fragments/common :: navbar"></div>
+	  <!-- Registration Form Start -->
+    <section>
+      <div class="form-container container-fluid w-50 text-center pt-3 pb-3 rounded-lg">
+        <form action="#" th:action="@{/registerUser}" th:object="${user}" method="post">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control tall-input" th:field="*{customer.firstName}" placeholder="Please enter your first name" th:classappend="${#fields.hasErrors('customer.firstName')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('customer.firstName')}" th:errors="*{customer.firstName}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control tall-input" th:field="*{customer.lastName}" placeholder="Please enter your last name" th:classappend="${#fields.hasErrors('customer.lastName')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('customer.lastName')}" th:errors="*{customer.lastName}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control tall-input" th:field="*{customer.phoneNumber}" placeholder="***-***-****" th:classappend="${#fields.hasErrors('customer.phoneNumber')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('customer.phoneNumber')}" th:errors="*{customer.phoneNumber}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control tall-input" th:field="*{customer.address}" placeholder="Please enter your address" th:classappend="${#fields.hasErrors('customer.address')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('customer.address')}" th:errors="*{customer.address}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control tall-input" th:field="*{customer.email}" placeholder="Please enter your email address" th:classappend="${#fields.hasErrors('customer.email')} ? 'is-invalid' : ''">
+             <span th:if="${#fields.hasErrors('customer.email')}" th:errors="*{customer.email}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control tall-input" th:field="*{login}" placeholder="Please create a username" th:classappend="${#fields.hasErrors('login')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('login')}" th:errors="*{login}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control tall-input" th:field="*{password}" placeholder="Please enter a password" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-controls">An error occured</span>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control tall-input" th:field="*{confirmPassword}" placeholder="Please confirm your password" th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid' : ''">
+            <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="error-controls">An error occured</span>
+          </div>
+          
+          
+          	<div th:if="${success!=null}" th:class="${success} ? 'alert alert-color' : 'alert alert-danger'" th:text="${message}"></div>
+                 
+            <button type="submit" class="w-100 btn form-submit">Register</button>          
+        </form>
+      </div>
+    </section>
+        <!-- Registration Form End -->
+ 
+  <footer th:replace="fragments/common :: footer"></footer>
+  
+   <script th:replace="fragments/common :: jquery"></script>
+    <script th:replace="fragments/common :: bundle"></script>
+</body>
+
+</html>
